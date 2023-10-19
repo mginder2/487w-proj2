@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit a Moose</title>
+</head>
+
+<body>
+    <h1>Edit a Moose</h1><!--header w/ number 1-6-->
+
+    <br>
+
+    <form method = "POST">
+        <label for = "id">Moose Id:</label>
+        <input type = "text" id = "id" name = "id">
+        
+        <br><br>
+
+        <label for = "name">New Name:</label>
+        <input type = "text" id = "name" name = "name">
+        
+        <br><br>
+
+        <label for = "desc">New Description:</label>
+        <input type = "text" id = "desc" name = "desc">
+        
+        <br><br>
+
+        <label for = "image">New Image Url:</label>
+        <input type = "text" id = "image" name = "image">
+        
+        <br><br>
+
+        <input type = "submit" value = "Edit this Moose">
+    </form>
+
+    <br>
+
+    <form action = "{{url_for('homepage')}}">
+        <input type = "submit" value = "Return to Homepage">
+    </form>
+</body>
+
+</html>

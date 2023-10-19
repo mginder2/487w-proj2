@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Adopt a Moose</title>
+</head>
+
+<body>
+    <h1>Welcome to AdoptAMoose.com</h1><!--header w/ number 1-6-->
+    <p>Here you can adopt a Moose</p><!--paragraph-->
+
+    <br><!--this is a break statement/new line-->
+
+    <form method = "POST">
+        <label for = "search">Search:</label>
+        <input type = "text" id = "search" name = "search">
+        <input type = "submit" value = "Search">
+        
+        <label for = "idASC">idASC:</label>
+        <input type = "radio" id = "idASC" name = "sortType" value = "0" checked>
+        
+        <label for = "idDSC">idDSC:</label>
+        <input type = "radio" id = "idDSC" name = "sortType" value = "1">
+
+        <label for = "nameASC">nameASC:</label>
+        <input type = "radio" id = "nameASC" name = "sortType" value = "2">
+
+        <label for = "nameDSC">nameDSC:</label>
+        <input type = "radio" id = "nameDSC" name = "sortType" value = "3">
+    </form>
+
+    <br><!--this is a break statement/new line-->
+
+    <table>
+        <tr>
+            <th>Id:</th>
+            <th>Name:</th>
+            <th>Desc:</th>
+            <th>Image:</th>
+        </tr>
+        {% for item in items %}
+        <tr>
+            <td>{{ item['id'] }}</td>
+            <td>{{ item['name'] }}</td>
+            <td>{{ item['description'] }}</td>
+            <td>{{ item['image'] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <br>
+
+    <form action = "{{url_for('addpage')}}">
+        <input type = "submit" value = "Add a Moose"> 
+    </form>
+
+    <form action = "{{url_for('deletepage')}}">
+        <input type = "submit" value = "Delete a Moose"> 
+    </form>
+
+    <form action = "{{url_for('editpage')}}">
+        <input type = "submit" value = "Edit a Moose"> 
+    </form>
+    <!--a href = "{{url_for('addpage')}}">this is a link</a-->
+</body>
+
+</html>
